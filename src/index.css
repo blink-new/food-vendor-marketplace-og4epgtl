@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nohemi:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Updated color palette based on user's request */
+    --background: 35 14% 92%; /* #F1ECE8 - Primary background */
+    --foreground: 260 9% 26%; /* #2A2830 - Dark text */
+    --card: 35 14% 92%;
+    --card-foreground: 260 9% 26%;
+    --popover: 35 14% 92%;
+    --popover-foreground: 260 9% 26%;
+    --primary: 160 48% 54%; /* #48CBA0 - Primary green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 22 100% 76%; /* #FEAD8A - Accent orange */
+    --secondary-foreground: 260 9% 26%;
+    --muted: 35 14% 88%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 22 100% 76%; /* #FEAD8A - Accent orange */
+    --accent-foreground: 260 9% 26%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 14% 88%;
+    --input: 35 14% 88%;
+    --ring: 160 48% 54%; /* #48CBA0 - Primary green */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 260 9% 26%; /* #2A2830 - Dark background */
+    --foreground: 35 14% 92%;
+    --card: 260 9% 26%;
+    --card-foreground: 35 14% 92%;
+    --popover: 260 9% 26%;
+    --popover-foreground: 35 14% 92%;
+    --primary: 160 48% 54%; /* #48CBA0 - Primary green */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 22 100% 76%; /* #FEAD8A - Accent orange */
+    --secondary-foreground: 260 9% 26%;
+    --muted: 260 9% 30%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 22 100% 76%;
+    --accent-foreground: 35 14% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 14% 92%;
+    --border: 260 9% 30%;
+    --input: 260 9% 30%;
+    --ring: 160 48% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    font-family: Nohemi, sans-serif;
+  }
+}
+
+/* Custom gradient backgrounds using the new color palette */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%);
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0%;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
